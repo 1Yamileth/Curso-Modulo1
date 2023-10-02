@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
@@ -41,7 +42,14 @@
             CrearButton = new Button();
             MostrarButton = new Button();
             PersonasDataGridView = new DataGridView();
+            PersonaBindingSource = new BindingSource(components);
+            nombreDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            estaturaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            edadDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            generoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            fechaNacimientoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)PersonasDataGridView).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)PersonaBindingSource).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -132,7 +140,7 @@
             CrearButton.Name = "CrearButton";
             CrearButton.Size = new Size(112, 34);
             CrearButton.TabIndex = 11;
-            CrearButton.Text = "Crear";
+            CrearButton.Text = "Agregar";
             CrearButton.UseVisualStyleBackColor = true;
             CrearButton.Click += CrearButton_Click;
             // 
@@ -148,13 +156,56 @@
             // 
             // PersonasDataGridView
             // 
+            PersonasDataGridView.AutoGenerateColumns = false;
+            PersonasDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             PersonasDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            PersonasDataGridView.Columns.AddRange(new DataGridViewColumn[] { nombreDataGridViewTextBoxColumn, estaturaDataGridViewTextBoxColumn, edadDataGridViewTextBoxColumn, generoDataGridViewTextBoxColumn, fechaNacimientoDataGridViewTextBoxColumn });
+            PersonasDataGridView.DataSource = PersonaBindingSource;
             PersonasDataGridView.Location = new Point(0, 432);
             PersonasDataGridView.Name = "PersonasDataGridView";
             PersonasDataGridView.RowHeadersWidth = 62;
             PersonasDataGridView.RowTemplate.Height = 33;
             PersonasDataGridView.Size = new Size(1331, 283);
             PersonasDataGridView.TabIndex = 13;
+            // 
+            // PersonaBindingSource
+            // 
+            PersonaBindingSource.DataSource = typeof(Entidades_Clases.Persona);
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
+            nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            nombreDataGridViewTextBoxColumn.MinimumWidth = 8;
+            nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            // 
+            // estaturaDataGridViewTextBoxColumn
+            // 
+            estaturaDataGridViewTextBoxColumn.DataPropertyName = "Estatura";
+            estaturaDataGridViewTextBoxColumn.HeaderText = "Estatura";
+            estaturaDataGridViewTextBoxColumn.MinimumWidth = 8;
+            estaturaDataGridViewTextBoxColumn.Name = "estaturaDataGridViewTextBoxColumn";
+            // 
+            // edadDataGridViewTextBoxColumn
+            // 
+            edadDataGridViewTextBoxColumn.DataPropertyName = "Edad";
+            edadDataGridViewTextBoxColumn.HeaderText = "Edad";
+            edadDataGridViewTextBoxColumn.MinimumWidth = 8;
+            edadDataGridViewTextBoxColumn.Name = "edadDataGridViewTextBoxColumn";
+            // 
+            // generoDataGridViewTextBoxColumn
+            // 
+            generoDataGridViewTextBoxColumn.DataPropertyName = "Genero";
+            generoDataGridViewTextBoxColumn.HeaderText = "Genero";
+            generoDataGridViewTextBoxColumn.MinimumWidth = 8;
+            generoDataGridViewTextBoxColumn.Name = "generoDataGridViewTextBoxColumn";
+            // 
+            // fechaNacimientoDataGridViewTextBoxColumn
+            // 
+            fechaNacimientoDataGridViewTextBoxColumn.DataPropertyName = "FechaNacimiento";
+            fechaNacimientoDataGridViewTextBoxColumn.HeaderText = "FechaNacimiento";
+            fechaNacimientoDataGridViewTextBoxColumn.MinimumWidth = 8;
+            fechaNacimientoDataGridViewTextBoxColumn.Name = "fechaNacimientoDataGridViewTextBoxColumn";
             // 
             // Form1
             // 
@@ -177,6 +228,7 @@
             Name = "Form1";
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)PersonasDataGridView).EndInit();
+            ((System.ComponentModel.ISupportInitialize)PersonaBindingSource).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -196,5 +248,11 @@
         private Button CrearButton;
         private Button MostrarButton;
         private DataGridView PersonasDataGridView;
+        private BindingSource PersonaBindingSource;
+        private DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn estaturaDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn edadDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn generoDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn fechaNacimientoDataGridViewTextBoxColumn;
     }
 }
