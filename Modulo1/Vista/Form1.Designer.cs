@@ -203,7 +203,7 @@
             // fechaNacimientoDataGridViewTextBoxColumn
             // 
             fechaNacimientoDataGridViewTextBoxColumn.DataPropertyName = "FechaNacimiento";
-            fechaNacimientoDataGridViewTextBoxColumn.HeaderText = "FechaNacimiento";
+            fechaNacimientoDataGridViewTextBoxColumn.HeaderText = "Fecha Nacimiento";
             fechaNacimientoDataGridViewTextBoxColumn.MinimumWidth = 8;
             fechaNacimientoDataGridViewTextBoxColumn.Name = "fechaNacimientoDataGridViewTextBoxColumn";
             // 

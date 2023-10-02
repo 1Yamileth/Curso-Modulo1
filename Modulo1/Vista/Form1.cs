@@ -42,11 +42,11 @@ namespace Vista
         private void Limpiar()
         {
             _persona = null;
-            NombreTextBox.Text=string.Empty;
-            EstaturaTextBox.Text=string.Empty;
+            NombreTextBox.Text = string.Empty;
+            EstaturaTextBox.Text = string.Empty;
             EdadTextBox.Clear();
             GeneroTextBox.Clear();
-            NacimientoDateTimePicker.Value= DateTime.Now;
+            NacimientoDateTimePicker.Value = DateTime.Now;
         }
         private void MostrarButton_Click(object sender, EventArgs e)
         {
